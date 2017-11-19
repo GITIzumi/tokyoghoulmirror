@@ -139,6 +139,22 @@ h1{
   overflow: hidden!important;
   text-overflow: ellipsis;
   white-space: nowrap;
+  color: black;
+}
+.envoyer{
+  background-color: white;
+  box-shadow: none;
+  border: none;
+  border: 2px solid #3d566e;
+  /* text-transform: uppercase; */
+  margin: 0 auto;
+  display: block;
+  padding: 6px 18px;
+  transition: 200ms all ease;
+}
+.envoyer:hover{
+  background-color: #3d566e;
+  color: white;
 }
 @media (min-width : 576px){
   .groupegroupe{
