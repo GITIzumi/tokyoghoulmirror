@@ -178,11 +178,12 @@
   {
     array_push($data,$value);
   }
-  if  (isset($_SESSION["crea-perso"]["nature"]))
+
+if  (isset($_SESSION["crea-perso"]["nature"]))
+{
+  if  ($_SESSION["crea-perso"]["nature"] == 0)
   {
-    if  ($_SESSION["crea-perso"]["nature"] == 0)
-    {
-      $grostableau = array(
+    $grostableau = array(
         array(
             "stats" => $langage_perso['creation_force'][$user_langue],
             "valeur"=> $_SESSION["crea-perso"]["stat"]["force"]
@@ -223,11 +224,11 @@
             "stats" => $langage_perso['creation_vitalite'][$user_langue],
             "valeur"=> $_SESSION["crea-perso"]["stat"]["vitalite"]
         ),
-      );
-    }
-    else
-    {
-      $grostableau = array(
+    );
+  }
+  else
+  {
+    $grostableau = array(
         array(
             "stats" => $langage_perso['creation_force'][$user_langue],
             "valeur"=> $_SESSION["crea-perso"]["stat"]["force"]
@@ -268,13 +269,13 @@
             "stats" => $langage_perso['creation_vitalite'][$user_langue],
             "valeur"=> $_SESSION["crea-perso"]["stat"]["vitalite"]
         ),
-      );
-    }
-
+    );
   }
-  else
-  {
-    $grostableau = array(
+
+}
+else
+{
+  $grostableau = array(
       array(
           "stats" => $langage_perso['creation_force'][$user_langue],
           "valeur"=> $_SESSION["crea-perso"]["stat"]["force"]
@@ -315,8 +316,8 @@
           "stats" => $langage_perso['creation_vitalite'][$user_langue],
           "valeur"=> $_SESSION["crea-perso"]["stat"]["vitalite"]
       ),
-    );
-  }
+  );
+}
 
 
 echo json_encode($grostableau);

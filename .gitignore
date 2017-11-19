@@ -50,3 +50,6 @@ Temporary Items
 .idea/modules.xml
 .idea/tokyoghoulmirror.iml
 .idea/workspace.xml
+.htaccess
+_connected.php
+_logout.php
