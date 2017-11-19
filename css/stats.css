@@ -1,0 +1,138 @@
+html,
+body{
+  width: 100%;
+  height: 100%;
+  background-color: rgb(237, 237, 237);
+  font-family: sans-serif;
+  font-family: 'Dosis', sans-serif;
+}
+.entete{
+  height: 85px;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  background-color: #3498db;
+  color: white;
+  text-align: center;
+  z-index: 60;
+  padding-left: 0;
+}
+.footer{
+  height: 25px;
+  background-color: #3498db;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transition: 500ms all ease;
+  padding-left: 0;
+}
+.boutonnavphone{
+  background-color: #3498db;
+}
+.teuteu{
+  text-align: center;
+  display: block;
+  color: white;
+  font-size: 24px;
+}
+h1{
+  font-size: 28px;
+  text-transform: uppercase;
+}
+.imglieux{
+  width: 100%;
+  padding-top: 100px;
+}
+.general{
+  margin-top: 100px;
+  padding-left: 15px;
+  margin-bottom: 30px;
+}
+.groupename{
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 7px 0;
+  font-size: 18px;
+  cursor: pointer;
+}
+.groupegroupe{
+    margin-top: 140px;
+}
+
+.navigation{
+  display: none;
+}
+.phone-stats{
+  display: none;
+}
+
+.col-graph h2{
+  text-align: center;
+  font-size: 24px;
+}
+
+.donuts{
+  max-height: 300px;
+  max-width: 300px;
+  margin:0 auto;
+  margin-top: -25px;
+}
+
+.col-graph ul{
+  padding-left: 0;
+  padding-top: 10px;
+  list-style-type: none;
+  font-size: 18px;
+}
+.carrecouleur{
+  height:15px;
+  width:15px;
+  float: left;
+  margin-right: 15px;
+  margin-top: 5px;
+}
+.col-graph ul li{
+  text-decoration: none;
+}
+.nombrejs{
+  font-size: 48px;
+}
+.iconejs{
+  text-align: center;
+  display: inherit;
+  font-size: 40px;
+  padding-top: 15px;
+}
+@media (min-width : 576px){
+  .col-graph ul{
+    max-height: 300px;
+    overflow-y: auto;
+  }
+  .col-graph h2{
+    text-align: center;
+    font-size: 24px;
+    border-bottom: 1px solid grey;
+    padding-bottom: 20px;
+  }
+  .navigationphone{
+    display: none;
+  }
+  .boutonnavphone{
+    display: none;
+  }
+  .navigation{
+    display: block;
+  }
+  .general{
+    padding-left: 85px;
+  }
+  .entete{
+    padding-left: 70px;
+  }
+  .footer{
+    padding-left: 85px;
+  }
+}

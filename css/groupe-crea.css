@@ -1,0 +1,189 @@
+html,
+body{
+  width: 100%;
+  height: 100%;
+  background-color: rgb(237, 237, 237);
+  font-family: sans-serif;
+  font-family: 'Dosis', sans-serif;
+}
+.entete{
+  height: 85px;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  background-color: #9b50ba;
+  color: white;
+  text-align: center;
+  z-index: 60;
+  padding-left: 0;
+}
+.footer{
+  height: 25px;
+  background-color: #9b50ba;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transition: 500ms all ease;
+  padding-left: 0;
+}
+.boutonnavphone{
+  background-color: #9b50ba;
+}
+.teuteu{
+  text-align: center;
+  display: block;
+  color: white;
+  font-size: 24px;
+}
+h1{
+  font-size: 28px;
+  text-transform: uppercase;
+}
+.imglieux{
+  width: 100%;
+  padding-top: 12px;
+}
+.general{
+  margin-top: 115px;
+  padding-left: 15px;
+  margin-bottom: 30px;
+}
+.groupename{
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 7px 0;
+  font-size: 18px;
+  cursor: pointer;
+  position: relative;
+  top:0;
+  left:0;
+  transition: all 200ms ease;
+}
+.groupenamecreate{
+  color: black;
+}
+.groupenamecreate .fa{
+  padding-right: 15px;
+}
+.groupenamecreate:hover{
+  /*background-color: rgb(237, 237, 237);*/
+  /*color:black;*/
+}
+.groupename:hover{
+  top:-3px;
+  left:-3px;
+}
+
+.navigation{
+  display: none;
+}
+
+.part {
+  background-color: white;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  border-radius: 15px;
+}
+.personnage{
+  margin-top: 15px;
+  margin-bottom: 15px;
+  width:50%;
+  float:left;
+  height: 180px;
+  padding-top: 12px;
+  opacity: 0.3;
+}
+.actifperso{
+  opacity: 1;
+}
+.rond-img{
+  margin: 0 auto;
+  height: 80px;
+  width: 80px;
+  background-position: center;
+  background-size: cover;
+  border-radius: 50px;
+  margin-bottom: 15px;
+  transition: 200ms all ease;
+}
+.rond-img .fa{
+  font-size: 50px;
+  display: block;
+  text-align: center;
+  padding-top: 20px;
+}
+.personnage:hover .rond-img{
+  transform: scale(1.1);
+}
+.nom,
+.prenom{
+  text-align: center;
+  text-transform: uppercase;
+  color: rgb(255,0,0);
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  overflow: hidden!important;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.surnom{
+  font-family: 'Special Elite';
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+  overflow: hidden!important;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+@media (min-width : 576px){
+  .groupegroupe{
+    margin-top: 30px;
+  }
+  .navigationphone{
+    display: none;
+  }
+  .boutonnavphone{
+    display: none;
+  }
+  .navigation{
+    display: block;
+  }
+  .general{
+    padding-left: 85px;
+  }
+  .entete{
+    padding-left: 70px;
+  }
+  .footer{
+    padding-left: 85px;
+  }
+}
+@media (min-width : 768px){
+  .personnage{
+    width: 25%;
+  }
+}
+@media (min-width : 1124px){
+  .personnage{
+    width: 12.5%;
+  }
+}
+
+
+.svgeouille{
+  position:fixed;
+  top:0;
+  bottom:0;
+  left:0;
+  right:0;
+}
+svg:not(:root) {
+  overflow: hidden;
+  height: -webkit-fill-available;
+  width: -webkit-fill-available;
+}

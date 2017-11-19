@@ -1,0 +1,40 @@
+.navigation{
+  width: 70px;
+  background-color: #2b3b4a;
+  position: fixed;
+  top: 0;
+  left: -100%;
+  bottom:0;
+  z-index: 100;
+}
+.titreinnav{
+  color: white;
+  text-align: center;
+  display: none;
+}
+.icone-nav{
+  color: white;
+  text-align: center;
+  display: block;
+}
+.item-nav{
+  padding-top: 18px;
+  height: 55px;
+}
+.item-nav:hover{
+  background-color: #314457;
+}
+.titre-nav{
+  height: 85px;
+  padding-top: 10px;
+  background-color: #804282;
+}
+.titre-nav p{
+  font-size: 16px;
+  text-align: center;
+  color: white;
+  margin:0;
+}
+.bouton-cache{
+  cursor: pointer;
+}

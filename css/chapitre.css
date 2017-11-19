@@ -1,0 +1,299 @@
+html,
+body{
+  width: 100%;
+  height: 100%;
+  background-color: rgb(237, 237, 237);
+  font-family: sans-serif;
+  font-family: 'Dosis', sans-serif;
+}
+.entete{
+  height: 85px;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  background-color: #3d566e;
+  color: white;
+  text-align: center;
+  z-index: 60;
+  padding-left: 0;
+}
+.footer{
+  height: 25px;
+  background-color: #3d566e;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transition: 500ms all ease;
+  padding-left: 0;
+}
+.boutonnavphone{
+  background-color: #3d566e;
+}
+.teuteu{
+  text-align: center;
+  display: block;
+  color: white;
+  font-size: 24px;
+}
+h1{
+  font-size: 28px;
+  text-transform: uppercase;
+}
+a{
+  text-decoration: none;
+  color: black;
+}
+a:hover, a:focus{
+  text-decoration: none;
+  color: inherit;
+}
+.btn-retour{
+  display: block;
+  margin: 0 auto;
+  margin-top: 13px;
+  padding: 10px;
+  font-size: 20px;
+  transition: 200ms ease all;
+  width: 150px;
+  border: 2px solid white;
+  color: white;
+}
+.btn-retour:hover{
+  background-color: white;
+  color: #3d566e;
+  text-decoration: none;
+}
+.general{
+  margin-top: 115px;
+  padding-left: 15px;
+  margin-bottom: 30px;
+}
+.pastrouve{
+  text-align: center;
+}
+.item-chapitre{
+  background-color: white;
+  height: auto;
+  border-bottom: 1px solid #dedcdc;
+  position: relative;
+  left: 0;
+  transition: 200ms all ease;
+}
+
+.add-chapitre{
+  background-color: #3d566e;
+  margin-bottom: 30px;
+  color: white;
+  padding: 15px;
+  font-size: 18px;
+  overflow: hidden;
+  transition: 200ms all ease;
+}
+.add-chapitre p{
+  margin: 0;
+  transition: 200ms all ease;
+}
+.add-chapitre .fa{
+  padding-right: 25px;
+  padding-left: 20px;
+  transition: 200ms all ease;
+}
+.titre{
+  margin: 0;
+  padding: 15px 0;
+  font-size: 16px;
+}
+.add-chapitre:hover .fa
+{
+  padding-left: 50px;
+}
+.btn-chapitre{
+  display: block;
+  margin: 0 auto;
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  width: 110px;
+  border: 2px solid #3d566e;
+  text-transform: uppercase;
+  color: #3d566e;
+  transition: all 200ms ease;
+  padding: 8px;
+  margin-top: 21px;
+}
+.btn-chapitre:hover{
+  color: white;
+  background-color: #3d566e;
+}
+.btn-chapitre-lg{
+  /*display: block;
+  margin: 0 auto;
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  width: 200px;
+  border-bottom: 2px solid #3d566e;
+  text-transform: uppercase;
+  color: #3d566e;
+  transition: all 200ms ease;
+  padding: 8px;
+  margin-top: 21px;
+  margin-bottom: 30px;*/
+}
+.btn-chapitre-lg:hover{
+  /*color: white;
+  background-color: #3d566e;*/
+}
+.numero{
+  margin-bottom: 25px;
+  font-size: 24px;
+}
+.perso-content{
+  display: none;
+}
+.personnage{
+  margin-top: 15px;
+  margin-bottom: 15px;
+  width:50%;
+  float:left;
+  height: 180px;
+  padding-top: 12px;
+  opacity: 0.3;
+}
+.actifperso{
+  opacity: 1;
+}
+.rond-img{
+  margin: 0 auto;
+  height: 80px;
+  width: 80px;
+  background-position: center;
+  background-size: cover;
+  border-radius: 50px;
+  margin-bottom: 15px;
+  transition: 200ms all ease;
+}
+.rond-img .fa{
+  font-size: 50px;
+  display: block;
+  text-align: center;
+  padding-top: 20px;
+}
+.personnage:hover .rond-img{
+  transform: scale(1.1);
+}
+.nom,
+.prenom{
+  text-align: center;
+  text-transform: uppercase;
+  color: rgb(255,0,0);
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  overflow: hidden!important;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.surnom{
+  font-family: 'Special Elite';
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+  overflow: hidden!important;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.nature{
+  font-family: 'Special Elite';
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+}
+.arrondissement{
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  font-size: 12px;
+}
+.part{
+  background-color: white;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  border-radius: 15px
+}
+.spinoff{
+  cursor: pointer;
+}
+.modif{
+  font-size: 18px;
+  padding-top: 15px;
+}
+.envoyer{
+  background-color: white;
+  box-shadow: none;
+  border: none;
+  border: 2px solid #3d566e;
+  /* text-transform: uppercase; */
+  margin: 0 auto;
+  display: block;
+  padding: 6px 18px;
+  transition: 200ms all ease;
+}
+.envoyer:hover{
+  background-color: #3d566e;
+  color: white;
+}
+.item-chapitre .fa{
+  display: block;
+  text-align: center;
+}
+
+.actionnor{
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.navigation{
+  display: none;
+}
+.phone-chap{
+  display: none;
+}
+
+
+@media (min-width : 576px){
+  .navigationphone{
+    display: none;
+  }
+  .boutonnavphone{
+    display: none;
+  }
+  .navigation{
+    display: block;
+  }
+  .general{
+    padding-left: 85px;
+  }
+  .entete{
+    padding-left: 70px;
+  }
+  .footer{
+    padding-left: 85px;
+  }
+  .item-chapitre:hover{
+    left: -8px;
+  }
+}
+@media (min-width : 768px){
+  .personnage{
+    width: 25%;
+  }
+}
+@media (min-width : 1124px){
+  .personnage{
+    width: 12.5%;
+  }
+}
