@@ -41,6 +41,9 @@ h1{
   font-size: 28px;
   text-transform: uppercase;
 }
+.containerpersos{
+  margin-top: 50px;
+}
 .imglieux{
   width: 100%;
   padding-top: 12px;
@@ -49,6 +52,16 @@ h1{
   margin-top: 115px;
   padding-left: 15px;
   margin-bottom: 30px;
+}
+.containerarrondissmeent{
+  overflow-y: scroll;
+  height: 178px;
+}
+.containerarrondissmeent p{
+  cursor: pointer;
+}
+.containerarrondissmeent .fa{
+  padding-right: 15px;
 }
 .groupename{
   display: block;

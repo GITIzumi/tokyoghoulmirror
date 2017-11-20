@@ -3,6 +3,31 @@ session_start();
 include("_connected.php");
 include_once("langue.php");
 
+if (isset($_POST["ward"]))
+{
+  $ward = strip_tags(trim($_POST["ward"]));
+  if (isset($_SESSION["crea-groupe"]["ward"]))
+  {
+    if (in_array($ward,$_SESSION["crea-groupe"]["ward"]))
+    {
+      $tag_key = array_search($ward, $_SESSION["crea-groupe"]["ward"]);
+      unset($_SESSION["crea-groupe"]["ward"][$tag_key]);
+      echo "0";
+    }
+    else
+    {
+      array_push($_SESSION["crea-groupe"]["ward"],$ward);
+      echo "1";
+    }
+  }
+  else
+  {
+    $_SESSION["crea-groupe"]["ward"] = [];
+    array_push($_SESSION["crea-groupe"]["ward"],$ward);
+    echo "1";
+  }
+}
+
 if (isset($_POST["perso"]))
 {
   $id_perso = strip_tags(trim($_POST["perso"]));

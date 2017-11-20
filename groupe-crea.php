@@ -8,6 +8,36 @@ if (isset($_POST["annuler"]))
   unset($_SESSION["crea-groupe"]);
   header("location:http://tokyoghoul-mirror.com/groupe.php");
 }
+if (isset($_POST["envoyer"]))
+{
+  $nomfr   = NULL;
+  $nomjp   = NULL;
+  $descfr  = NULL;
+  $descjp  = NULL;
+  $couleur = NULL;
+
+  if (isset($_SESSION["crea-groupe"]["nomfr"]))
+  {
+    $nomfr = $_SESSION["crea-groupe"]["nomfr"];
+  }
+  if (isset($_SESSION["crea-groupe"]["nomjp"]))
+  {
+    $nomjp = $_SESSION["crea-groupe"]["nomjp"];
+  }
+  if (isset($_SESSION["crea-groupe"]["descfr"]))
+  {
+    $descfr = $_SESSION["crea-groupe"]["descfr"];
+  }
+  if (isset($_SESSION["crea-groupe"]["descjp"]))
+  {
+    $descjp = $_SESSION["crea-groupe"]["descjp"];
+  }
+  if (isset($_SESSION["crea-groupe"]["couleur"]))
+  {
+    $couleur = $_SESSION["crea-groupe"]["couleur"];
+  }
+
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -37,38 +67,96 @@ if (isset($_POST["annuler"]))
       <div class="col-xs-12">
         <div class="row part">
           <form  action="groupe-crea.php" enctype="multipart/form-data" method="post">
-            <div class="col-xs-12 col-md-6">
-              <p class="numero-form">
-                <label for=""><?php echo $language_groupe['creation_nom_francais'][$user_langue]; ?></label>
-                <input class="form-control creainput" type="text" name="nomfr" value="<?php if(isset($_SESSION["crea-groupe"]["nomfr"])) echo $_SESSION["crea-groupe"]["nomfr"];  ?>">
-              </p>
-            </div>
-            <div class="col-xs-12 col-md-6">
-              <p class="numero-form">
-                <label for=""><?php echo $language_groupe['creation_nom_japonais'][$user_langue]; ?></label>
-                <input class="form-control creainput" type="text" name="nomjp" value="<?php if(isset($_SESSION["crea-groupe"]["nomjp"])) echo $_SESSION["crea-groupe"]["nomjp"];  ?>">
-              </p>
+            <div class="row">
+              <div class="col-xs-12 col-md-6">
+                <div class="col-xs-12 col-md-6">
+                  <p class="numero-form">
+                    <label for=""><?php echo $language_groupe['creation_nom_francais'][$user_langue]; ?></label>
+                    <input class="form-control creainput" type="text" name="nomfr" value="<?php if(isset($_SESSION["crea-groupe"]["nomfr"])) echo $_SESSION["crea-groupe"]["nomfr"];  ?>">
+                  </p>
+                </div>
+                <div class="col-xs-12 col-md-6">
+                  <p class="numero-form">
+                    <label for=""><?php echo $language_groupe['creation_nom_japonais'][$user_langue]; ?></label>
+                    <input class="form-control creainput" type="text" name="nomjp" value="<?php if(isset($_SESSION["crea-groupe"]["nomjp"])) echo $_SESSION["crea-groupe"]["nomjp"];  ?>">
+                  </p>
+                </div>
+
+                <div class="col-xs-12 col-md-6">
+                  <p class="numero-form">
+                    <label for=""><?php echo $language_groupe['creation_description_fr'][$user_langue]; ?></label>
+                    <input class="form-control creainput" type="text" name="descfr" value="<?php if(isset($_SESSION["crea-groupe"]["descfr"])) echo $_SESSION["crea-groupe"]["descfr"]; ?>">
+                  </p>
+                </div>
+                <div class="col-xs-12 col-md-6">
+                  <p class="numero-form">
+                    <label for=""><?php echo $language_groupe['creation_description_jp'][$user_langue]; ?></label>
+                    <input class="form-control creainput" type="text" name="descjp" value="<?php if(isset($_SESSION["crea-groupe"]["descjp"])) echo $_SESSION["crea-groupe"]["descjp"]; ?>">
+                  </p>
+                </div>
+                <div class="col-xs-12 col-md-6">
+                  <p class="numero-form">
+                    <label for=""><?php echo $language_groupe['creation_couleur'][$user_langue]; ?></label>
+                    <input class="form-control creainput" type="text" name="couleur" value="<?php  if(isset($_SESSION["crea-groupe"]["couleur"])) echo $_SESSION["crea-groupe"]["couleur"]; ?>">
+                  </p>
+                </div>
+              </div>
+
+              <div class="col-xs-12 col-md-6">
+                <p class="numero-form">
+                  <label for=""><?php echo $langage_perso['creation_arrondissement'][$user_langue]; ?></label>
+                </p>
+                <div class="containerarrondissmeent">
+                  <?php
+                  $a = 1;
+                  foreach ($arrondissement as $key => $value)
+                  {
+                    echo "<p class=\"btnarrond ward ward".$key."\" data-ward=\"".$key."\">";
+                    if (isset($_SESSION["crea-groupe"]["ward"]))
+                    {
+                      if (in_array($key,$_SESSION["crea-groupe"]["ward"]))
+                      {
+                        echo "<i class=\"fa checkarrond fa-check-square-o\" aria-hidden=\"true\"></i>";
+                      }
+                      else
+                      {
+                        echo "<i class=\"fa checkarrond fa-square-o\" aria-hidden=\"true\"></i>";
+                      }
+                    }
+                    else
+                    {
+                      echo "<i class=\"fa checkarrond fa-square-o\" aria-hidden=\"true\"></i>";
+                    }
+                    if ($user_langue == "fr")
+                    {
+                      echo $key;
+                      if ($a == 1)
+                      {
+                        echo "er -";
+                      }
+                      else
+                      {
+                        echo "ème - ";
+                      }
+                      echo $value['fr'];
+                    }
+                    else
+                    {
+                      echo $key;
+                      echo " : ";
+                      echo $value['jp'];
+                    }
+                    echo "</p>";
+                    $a++;
+                  }
+                  ?>
+
+                </div>
+              </div>
+
             </div>
 
-            <div class="col-xs-12 col-md-6">
-              <p class="numero-form">
-                <label for=""><?php echo $language_groupe['creation_description_fr'][$user_langue]; ?></label>
-                <input class="form-control creainput" type="text" name="descfr" value="<?php if(isset($_SESSION["crea-groupe"]["descfr"])) echo $_SESSION["crea-groupe"]["descfr"]; ?>">
-              </p>
-            </div>
-            <div class="col-xs-12 col-md-6">
-              <p class="numero-form">
-                <label for=""><?php echo $language_groupe['creation_description_jp'][$user_langue]; ?></label>
-                <input class="form-control creainput" type="text" name="descjp" value="<?php if(isset($_SESSION["crea-groupe"]["descjp"])) echo $_SESSION["crea-groupe"]["descjp"]; ?>">
-              </p>
-            </div>
-            <div class="col-xs-12 col-md-6">
-              <p class="numero-form">
-                <label for=""><?php echo $language_groupe['creation_couleur'][$user_langue]; ?></label>
-                <input class="form-control creainput" type="text" name="couleur" value="<?php  if(isset($_SESSION["crea-groupe"]["couleur"])) echo $_SESSION["crea-groupe"]["couleur"]; ?>">
-              </p>
-            </div>
-            <div class="col-xs-12">
+            <div class="col-xs-12 containerpersos">
               <?php
               $query = $mysqli->query("
                 SELECT *
@@ -146,11 +234,32 @@ if (isset($_POST["annuler"]))
 
       </div>
     </div>
+
+
     <!-- <div class="footer">
       <i class="fa fa-bars teuteu" aria-hidden="true"></i>
     </div> -->
     <script type="text/javascript">
       $(document).ready(function(){
+        /*ARRONDISSEMENTS*/
+        $(".ward").click(function(){
+          var ward = $(this).data("ward");
+          query = $.ajax({
+            type:"POST",
+            url:"traitement-crea-groupe.php",
+            data:"ward="+ward,
+            success: function(data){
+              if (data == 0)
+              {
+                $(".ward"+ward+" .fa").addClass("fa-square-o").removeClass("fa-check-square-o");
+              }
+              else
+              {
+                $(".ward"+ward+" .fa").removeClass("fa-square-o").addClass("fa-check-square-o");
+              }
+            }
+          });
+        });
         $(".personnage").click(function(){
           var persoId = $(this).attr('data-id');
           $(this).toggleClass("actifperso");
