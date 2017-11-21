@@ -107,12 +107,12 @@ include_once("langue.php");
                       }
                       else
                       {
-                        echo "<p>".$text["resume"]["fr"]."</p>";
+                        echo "<p class=\"resume\">".$text["resume"]["fr"]."</p>";
                       }
                     }
                     else
                     {
-                      echo "<p>".$text["resume"][$user_langue]."</p>";
+                      echo "<p class=\"resume\">".$text["resume"][$user_langue]."</p>";
                     }
 
                     $idchapitre = $text['id'];

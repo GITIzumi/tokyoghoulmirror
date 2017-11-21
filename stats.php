@@ -44,20 +44,21 @@ include_once("langue.php");
           </div>
           <div class="row">
             <div class="col-xs-4">
-              <i class="iconejs fa fa-users" aria-hidden="true"></i>
-            </div>
-            <div class="col-xs-8">
-              <p class="nombrejs nombregroupe">0</p>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-xs-4">
               <i class="iconejs fa fa-bookmark" aria-hidden="true"></i>
             </div>
             <div class="col-xs-8">
               <p class="nombrejs nombrechapitre">0</p>
             </div>
           </div>
+          <div class="row">
+            <div class="col-xs-4">
+              <i class="iconejs fa fa-users" aria-hidden="true"></i>
+            </div>
+            <div class="col-xs-8">
+              <p class="nombrejs nombregroupe">0</p>
+            </div>
+          </div>
+
 
         </div>
 
