@@ -242,6 +242,10 @@ if (isset($_POST["envoyer"]))
             </div>
 
             <div class="col-xs-12 containerpersos">
+              <p>
+                <label for=""><?php echo $language_groupe['crea_groupe_perso'][$user_langue]; ?></label>
+              </p>
+
               <?php
               $query = $mysqli->query("
                 SELECT *

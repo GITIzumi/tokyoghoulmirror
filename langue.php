@@ -59,9 +59,9 @@
     8 =>array('fr'=>"Mise à jour",            'jp'=>"アップデート"),
     9 =>array('fr'=>"Appartition personnage", 'jp'=>"キャラクターの出現"),
    10 =>array('fr'=>"Suppression personnage", 'jp'=>"replaceme"),
-   11 =>array('fr'=>"Création groupe", 'jp'=>"replaceme"),
-   12 =>array('fr'=>"Modification groupe", 'jp'=>"replaceme"),
-   13 =>array('fr'=>"Suppression groupe", 'jp'=>"replaceme"),
+   11 =>array('fr'=>"Création groupe",        'jp'=>"replaceme"),
+   12 =>array('fr'=>"Modification groupe",    'jp'=>"replaceme"),
+   13 =>array('fr'=>"Suppression groupe",     'jp'=>"replaceme"),
 
   );
   $langage_home=array(
@@ -197,14 +197,14 @@
       'stat_homme'   =>array('fr'=>"Homme",                         'jp'=>"男性"),
       'stat_femme'   =>array('fr'=>"Femme",                         'jp'=>"女性"),
       'stat_inconnu' =>array('fr'=>"Inconnu",                       'jp'=>"不詳"),
-      'stat_genre'   =>array('fr'=>"Répartition des genres",       'jp'=>"性別分布"),
-      'stat_humain'  =>array('fr'=>"Humain",                       'jp'=>"人間"),
+      'stat_genre'   =>array('fr'=>"Répartition des genres",        'jp'=>"性別分布"),
+      'stat_humain'  =>array('fr'=>"Humain",                        'jp'=>"人間"),
       'stat_goule'   =>array('fr'=>"Goule",                         'jp'=>"喰種"),
       'stat_inconnu' =>array('fr'=>"Inconnu",                       'jp'=>"不詳"),
-      'stat_nature'  =>array('fr'=>"Répartition des natures",     'jp'=>"種の分布"),
-      'stat_kagune'  =>array('fr'=>"Répartition des kagunes",     'jp'=>"赫子の分布"),
-      'stat_attribut'=>array('fr'=>"Répartition des attributs", 'jp'=>"習熟の分布"),
-      'stat_groupe'  =>array('fr'=>"Personnages dans les groupes", 'jp'=>"グループで何"),
+      'stat_nature'  =>array('fr'=>"Répartition des natures",       'jp'=>"種の分布"),
+      'stat_kagune'  =>array('fr'=>"Répartition des kagunes",       'jp'=>"赫子の分布"),
+      'stat_attribut'=>array('fr'=>"Répartition des attributs",     'jp'=>"習熟の分布"),
+      'stat_groupe'  =>array('fr'=>"Personnages dans les groupes",  'jp'=>"グループで何"),
   );
 
   $language_lieux=array(
@@ -212,16 +212,18 @@
   );
   $language_perso_crea=array(
       'ficheperso_kagune_add'=>array('fr'=>"Ajouter un kagune au personnage", 'jp'=>"キャラクターに赫子を加える"),
-      'ficheperso_img_add'   =>array('fr'=>"Choisir une image", 'jp'=>""),
+      'ficheperso_img_add'   =>array('fr'=>"Choisir une image", 'jp'=>"replaceme"),
   );
   $language_groupe=array(
-      'ajout_groupe'           =>array('fr'=>"Créer un groupe",                 'jp'=>"グループを足す"),
-      'creation_groupe'        =>array('fr'=>"Création d'un groupe",            'jp'=>"グループを作る"),
-      'creation_nom_francais'  =>array('fr'=>"Nom en français",                 'jp'=>"フランス語の名前"),
-      'creation_nom_japonais'  =>array('fr'=>"Nom en japonais",                 'jp'=>"日本語の名前"),
-      'creation_description_fr'=>array('fr'=>"Description en français",         'jp'=>"フランス語の記述"),
-      'creation_description_jp'=>array('fr'=>"Description en japonais",         'jp'=>"日本語の記述"),
-      'creation_couleur'       =>array('fr'=>"Couleur",                         'jp'=>"色"),
+      'ajout_groupe'           =>array('fr'=>"Créer un groupe",                                     'jp'=>"グループを足す"),
+      'creation_groupe'        =>array('fr'=>"Création d'un groupe",                                'jp'=>"グループを作る"),
+      'creation_nom_francais'  =>array('fr'=>"Nom en français",                                     'jp'=>"フランス語の名前"),
+      'creation_nom_japonais'  =>array('fr'=>"Nom en japonais",                                     'jp'=>"日本語の名前"),
+      'creation_description_fr'=>array('fr'=>"Description en français",                             'jp'=>"フランス語の記述"),
+      'creation_description_jp'=>array('fr'=>"Description en japonais",                             'jp'=>"日本語の記述"),
+      'creation_couleur'       =>array('fr'=>"Couleur",                                             'jp'=>"色"),
+      'crea_groupe_perso'      =>array('fr'=>"Sélectionnez les personnages présents dans le groupe",'jp'=>"replaceme"),
+
   );
   $language_erreur=array(
       'erreur_survenue'       =>array('fr'=>"Une erreur est survenue",'jp'=>"エラーが発生しました"),
