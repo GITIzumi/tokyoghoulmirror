@@ -58,7 +58,11 @@
     7 =>array('fr'=>"Réponse au chapitre",    'jp'=>"章の答え"),
     8 =>array('fr'=>"Mise à jour",            'jp'=>"アップデート"),
     9 =>array('fr'=>"Appartition personnage", 'jp'=>"キャラクターの出現"),
-   10 =>array('fr'=>"Suppression personnage", 'jp'=>""),
+   10 =>array('fr'=>"Suppression personnage", 'jp'=>"replaceme"),
+   11 =>array('fr'=>"Création groupe", 'jp'=>"replaceme"),
+   12 =>array('fr'=>"Modification groupe", 'jp'=>"replaceme"),
+   13 =>array('fr'=>"Suppression groupe", 'jp'=>"replaceme"),
+
   );
   $langage_home=array(
     'langue_h2'             =>array('fr'=>"Changer la langue",                       'jp'=>"言語の変更"),

@@ -18,24 +18,109 @@ if (isset($_POST["envoyer"]))
 
   if (isset($_SESSION["crea-groupe"]["nomfr"]))
   {
-    $nomfr = $_SESSION["crea-groupe"]["nomfr"];
+    $nomfr = trim(strip_tags(htmlspecialchars($_SESSION["crea-groupe"]["nomfr"],ENT_QUOTES,"UTF-8")));
   }
   if (isset($_SESSION["crea-groupe"]["nomjp"]))
   {
-    $nomjp = $_SESSION["crea-groupe"]["nomjp"];
+    $nomjp = trim(strip_tags(htmlspecialchars($_SESSION["crea-groupe"]["nomjp"],ENT_QUOTES,"UTF-8")));
   }
   if (isset($_SESSION["crea-groupe"]["descfr"]))
   {
-    $descfr = $_SESSION["crea-groupe"]["descfr"];
+    $descfr = trim(strip_tags(htmlspecialchars($_SESSION["crea-groupe"]["descfr"],ENT_QUOTES,"UTF-8")));
   }
   if (isset($_SESSION["crea-groupe"]["descjp"]))
   {
-    $descjp = $_SESSION["crea-groupe"]["descjp"];
+    $descjp = trim(strip_tags(htmlspecialchars($_SESSION["crea-groupe"]["descjp"],ENT_QUOTES,"UTF-8")));
   }
   if (isset($_SESSION["crea-groupe"]["couleur"]))
   {
-    $couleur = $_SESSION["crea-groupe"]["couleur"];
+    $couleur = trim(strip_tags(htmlspecialchars($_SESSION["crea-groupe"]["couleur"],ENT_QUOTES,"UTF-8")));
   }
+
+  $query = $mysqli->query("
+    INSERT INTO groupe(
+    groupe_id,
+    groupe_nom_fr,
+    groupe_nom_jp,
+    groupe_couleur,
+    groupe_description_fr,
+    groupe_description_jp,
+     groupe_actif
+     ) VALUES (
+     NULL,
+     '$nomfr',
+     '$nomjp',
+     '$couleur',
+     '$descfr',
+     '$descjp',
+     0)
+   ");
+  $idinsert = $mysqli->insert_id;
+
+  // Ajout ARRONDISSEMENTS
+  if (isset($_SESSION["crea-groupe"]["ward"]))
+  {
+    $arrondissemnts = $_SESSION["crea-groupe"]["ward"];
+    foreach ($arrondissemnts as $key => $value)
+    {
+      if ($value >0)
+      {
+        $query = $mysqli->query("INSERT INTO groupe_arrondissement (
+          groupe_arrondissement_id,
+          groupe_id,
+          arrondissement_id
+        ) VALUES (
+          NULL,
+          $idinsert,
+          $value
+        )");
+      }
+    }
+  }
+
+  // Ajout GROUPES
+  if (isset($_SESSION["crea-groupe"]["perso"]))
+  {
+    $perso = $_SESSION["crea-groupe"]["perso"];
+    foreach ($perso as $key => $value)
+    {
+      if ($value >0)
+      {
+        $query = $mysqli->query("INSERT INTO perso_groupe (
+          perso_groupe_id,
+          perso_id,
+          groupe_id
+        ) VALUES (
+          NULL,
+          $value,
+          $idinsert
+        )");
+      }
+    }
+  }
+
+  $action = 11;
+  $date  = strtotime("now");
+
+  $query = $mysqli->query("INSERT INTO notification (
+                            notification_id,
+                            notification_action,
+                            notification_date,
+                            user_id,
+                            chapitre_id,
+                            perso_id
+                          ) VALUES (
+                            NULL,
+                            $action,
+                            '$date',
+                            '$user_id',
+                            $idinsert,
+                            0
+                          )
+                        ");
+
+  unset($_SESSION["crea-groupe"]);
+  header('location: groupe.php');
 
 }
 ?>
@@ -103,10 +188,10 @@ if (isset($_POST["envoyer"]))
               </div>
 
               <div class="col-xs-12 col-md-6">
-                <p class="numero-form">
+                <p class="numero-form col-xs-12">
                   <label for=""><?php echo $langage_perso['creation_arrondissement'][$user_langue]; ?></label>
                 </p>
-                <div class="containerarrondissmeent">
+                <div class="containerarrondissmeent col-xs-12">
                   <?php
                   $a = 1;
                   foreach ($arrondissement as $key => $value)

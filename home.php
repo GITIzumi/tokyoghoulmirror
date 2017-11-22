@@ -295,22 +295,40 @@ $monUrl = $_SERVER['REQUEST_URI'];
                         }
                         if ($chapitre > 0)
                         {
-                          $query3 = $mysqli->query("SELECT * FROM chapitre WHERE chapitre_id = $chapitre");
-                          $nb3    = $query3->num_rows;
-                          if ($nb3 == 1)
+                          if ($numero_action == 11 OR $numero_action == 12 OR $numero_action == 13)
                           {
-                            $row3              = $query3->fetch_array();
-                            $liendrive         = $row3["chapitre_link"];
-                            $chapitre_tableau  = array(
-                              "titre" => array(
-                                            "fr" => $row3["chapitre_titre_fr"],
-                                            "jp" => $row3["chapitre_titre_jp"]
-                              ),
-                              "numero" => array(
-                                            "fr" => $row3["chapitre_numero_fr"],
-                                            "jp" => $row3["chapitre_numero_jp"]
-                              ),
-                            );
+                            $query3 = $mysqli->query("SELECT * FROM groupe WHERE groupe_id = $chapitre");
+                            $nb3    = $query3->num_rows;
+                            if ($nb3 == 1)
+                            {
+                              $row3              = $query3->fetch_array();
+                              $groupe_tableau  = array(
+                                  "nom" => array(
+                                      "fr" => $row3["groupe_nom_fr"],
+                                      "jp" => $row3["groupe_nom_jp"]
+                                  ),
+                              );
+                            }
+                          }
+                          else
+                          {
+                            $query3 = $mysqli->query("SELECT * FROM chapitre WHERE chapitre_id = $chapitre");
+                            $nb3    = $query3->num_rows;
+                            if ($nb3 == 1)
+                            {
+                              $row3              = $query3->fetch_array();
+                              $liendrive         = $row3["chapitre_link"];
+                              $chapitre_tableau  = array(
+                                  "titre" => array(
+                                      "fr" => $row3["chapitre_titre_fr"],
+                                      "jp" => $row3["chapitre_titre_jp"]
+                                  ),
+                                  "numero" => array(
+                                      "fr" => $row3["chapitre_numero_fr"],
+                                      "jp" => $row3["chapitre_numero_jp"]
+                                  ),
+                              );
+                            }
                           }
                         }
                         if ($perso > 0)
@@ -362,6 +380,10 @@ $monUrl = $_SERVER['REQUEST_URI'];
                                   {
                                     echo "<i class=\"fa fa-wrench notif-actif\" aria-hidden=\"true\"></i>";
                                   }
+                                  else if($numero_action == 11 OR $numero_action == 12 OR $numero_action == 13)
+                                  {
+                                    echo "<i class=\"fa fa-users notif-actif\" aria-hidden=\"true\"></i>";
+                                  }
                                   else
                                   {
                                     echo "<i class=\"fa fa-book notif-actif\" aria-hidden=\"true\"></i>";
@@ -406,6 +428,17 @@ $monUrl = $_SERVER['REQUEST_URI'];
                                   else if($numero_action == 8)
                                   {
                                     echo "<p>".$action[$numero_action][$user_langue]." : ".$texteupdate["fr"]."</p>";
+                                  }
+                                  else if($numero_action == 11 OR $numero_action == 12 OR $numero_action == 13)
+                                  {
+                                    if (empty($groupe_tableau["nom"][$user_langue]))
+                                    {
+                                      echo "<p>".$action[$numero_action]["fr"]." : ".$groupe_tableau["nom"]["fr"]."</p>";
+                                    }
+                                    else
+                                    {
+                                      echo "<p>".$action[$numero_action][$user_langue]." : ".$groupe_tableau["nom"][$user_langue]."</p>";
+                                    }
                                   }
                                   else
                                   {
